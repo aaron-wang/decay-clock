@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+  </head>
+
+  <body>
+    <h1 style="text-align:center">Title</h1>
+    <hr>
+    <p>Welcome! Add your timers below by clicking {X}</p>
+
+    <!-- <ul id='timer-list'>
+      <li>Main</li>
+      <li id='add-timer'>Add Timer!</li>
+    </ul> -->
+    <a href="subpage.html">Direct subpage link</a>
+
+    <script>
+      const list = document.createElement('ul');
+      list.id = 'timer-list';
+      const info = document.createElement('p');
+      const html = document.querySelector('html');
+      info.textContent = 'Below is a dynamic list.';
+      document.body.appendChild(info);
+      document.body.appendChild(list);
+    </script>
+
+    <input id ="input-time">
+    <button onclick="addNewTimer()">Add</button>
+    <button onclick="removeFirst()">Remove First</button>
+    
+    <script>
+      var countlist = 0;
+      var indexList = 1;
+
+      //VERY BUGGY IMPLEMENTATION - an array would be much better
+      //I just quickly type this up to give a sense of how it'd feel
+      function addNewTimer() {
+        //add a new timer as a bullet poit
+        countlist++
+        const listItem = document.createElement('li');
+        const aItem = document.createElement('a');
+        const listContent = document.getElementById("input-time").value;
+
+        document.getElementById("input-time").value = '';
+        listItem.textContent = listContent;
+        list.appendChild(listItem);
+
+        listItem.id = "first-list-item" + String(countlist);
+        console.log(listItem.id);
+        if (countlist == 1) {
+          setFirstItemProperties(listItem);
+        }
+      }
+      function removeFirst() {
+        //remove the first timer bullet point
+        if (indexList <= countlist) {
+          document.getElementById("first-list-item" + String(indexList)).remove();
+          indexList++;
+          var newFirst = document.getElementById("first-list-item" + String(indexList));
+          // newFirst.id = "first-list-item" + String(countlist);
+          console.log(newFirst.id);
+          setFirstItemProperties(newFirst);
+        }
+      }
+      function setFirstItemProperties(ele) {
+        ele.style.textDecoration="underline";
+        ele.style.color = "blue";
+      }
+    </script>
+  </body>
+</html>
