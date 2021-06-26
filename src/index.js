@@ -16,6 +16,7 @@ const createWindow = () => {
       contextIsolation: false,
       enableRemoteModule: true,
     },
+    icon:"icon.png"
   });
 
   // and load the index.html of the app.
