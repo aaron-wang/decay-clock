@@ -17,6 +17,10 @@
       <li id='add-timer'>Add Timer!</li>
     </ul> -->
     <a href="subpage.html">Direct subpage link</a>
+    <br>
+    <input id ="input-time">
+    <button onclick="addNewTimer()">Add</button>
+    <button onclick="removeFirst()">Remove First</button>
 
     <script>
       const list = document.createElement('ul');
@@ -28,9 +32,7 @@
       document.body.appendChild(list);
     </script>
 
-    <input id ="input-time">
-    <button onclick="addNewTimer()">Add</button>
-    <button onclick="removeFirst()">Remove First</button>
+    
     
     <script>
       var countlist = 0;
