@@ -515,7 +515,7 @@ li {
 .btn-close {
   font-family: Raleway;
   font-weight: 700;
-  color: #fff !important;
+  color: #fff;
   font-size: 14px;
   padding: 15px 55px;
   border-radius: 2em;
@@ -526,10 +526,10 @@ li {
 }
 .btn-close:hover {
   font-weight: 700;
-  color: #fff !important;
+  color: #fff;
   background: #DE937A;
 }
 
 .btn-close:active {
-  background: #b1735f !important;
+  background: #b1735f ;
 }
