@@ -450,7 +450,9 @@ input.input100 {
 
 /*___________________________________________*/
 
-
+body  {
+  background-color:#344059;
+}
 
 .task-name {
   font-family: Raleway;

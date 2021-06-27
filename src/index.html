@@ -2,32 +2,67 @@
 <html>
   <head>
     <meta charset="UTF-8">
+
+    <!-- font------------------------------------------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800&family=Roboto&display=swap" rel="stylesheet">
+
     <title>Hello World!</title>
     <link rel="stylesheet" href="index.css">
     <script defer src = "render.js"></script>
   </head>
+  
   <body>
-    <img src = "../icon.png" 
-    style="width:35%; height:35%; display: block; margin-left:auto; margin-right:auto">
-    <h1 style="text-align:center">Decay Clock</h1>
-    <hr>
-    <p style="text-align:center">8:46:33PM</p>
-    <br>
-    6 timers.
 
-    <ul id='timer-list' style="columns:2">
-      <!-- <li><a href="subpage.html">9:00 PM</a></li> -->
-      <li>Block 1</li>
-      <li>Block 1</li>
-      <li>Block 1</li>
-      <li>Block 1</li>
-      <li>Block 1</li>
-      <li>Block 1</li>      
-    </ul>
-    *hide bullets, and have each be a block? <br>
-    <!-- <a href="subpage.html">Direct subpage link</a> -->
-    
+    <button class="add-btn" id="add-btn">Add Task</button>
+    <div class="task-grid" id="task-grid">
+      <div class="task-object" id="task-object">
+        <h1>08<br>10</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <div class='static' id='static'></div>
+        <div class="pink-load" id='pink-load'></div>
+      </div>
+
     <button id="subpage">Click here</button>
+
+
+
     <script src="Subpage/subpage_render.js"></script>
+
+      <script>
+        const btn = document.getElementById("add-btn");
+
+        btn.addEventListener('click', AddTask)
+
+        function AddTask(end_hour, end_minute, task) {
+          const hour = end_hour;
+          const min = end_minute;
+          const grid = document.getElementById('task-grid');
+          const new_div = document.createElement("div");
+          const time = document.createElement("h1");
+          const task_obj = document.createElement("p");
+          const white = document.createElement("div");
+          const pink = document.createElement("div");
+          
+          grid.appendChild(new_div);
+          new_div.id = "task-object";
+
+          time.innerHTML = hour + "<br>" + min;
+          new_div.appendChild(time);
+
+          task_obj.innerHTML = task;
+          new_div.appendChild(task_obj);
+
+          white.id = "static";
+          pink.id = "pink-load";
+          new_div.appendChild(white);
+          new_div.appendChild(pink);
+          console.log('works');
+        }
+      </script>
+
+
+
   </body>
 </html>

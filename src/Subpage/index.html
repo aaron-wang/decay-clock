@@ -3,7 +3,7 @@
 <head>
 	<title>Coming Soon 3</title>
 
-	<meta charset="UTF-8">
+	<meta charset="UTF-8">		
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
 <body>
 	
 	
-	<div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15" style="background-image: url('images/bg01.jpg');">
+	<div class="bg-img1 size1 flex-w flex-c-m p-t-55 p-b-55 p-l-15 p-r-15">
 		<div class="wsize1 bor1 bg1 p-t-100 p-b-100 p-l-15 p-r-15 respon1">
 			<div class="wrappic1">
 				<h1 class="task-name">Placeholder</h1>
@@ -63,25 +63,17 @@
 
 			<div class="container-alarms">
 				<ul class="sub-alarm-list">
-					<li>8:30</li>
-					<li>8:45</li>
-					<li>9:00</li>
-					<li>9:15</li>
-					<li>9:30</li>
-					<li>9:45</li>
+				<!-- Populated with times -->
 				</ul>
 			</div>
 
-			<button id="close-subp" class="btn-close">Close</button>
+			<button id="close-pg" class="btn-close">Close</button>
 		</div>
 	</div>
 
-
-
-	
-
 <!--===============================================================================================-->	
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
+	<script>window.$ = window.jQuery = require('./vendor/jquery/jquery-3.2.1.min');</script>
 <!--===============================================================================================-->
 	<script src="vendor/bootstrap/js/popper.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -109,13 +101,13 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="vendor/tilt/tilt.jquery.min.js"></script>
-	<script >
+	<script>
 		$('.js-tilt').tilt({
 			scale: 1.1
 		})
 	</script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+	<script src="close_button.js"></script>
 
 </body>
 </html>
