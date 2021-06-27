@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <!-- font------------------------------------------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800&family=Roboto&display=swap" rel="stylesheet">
+
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css">
+    <script defer src = "render.js"></script>
+  </head>
+  
+  <body>
+
+    <button class="add-btn" id="add-btn">Add Task</button>
+    <div class="task-grid" id="task-grid">
+<!--       
+      <input maxlength ="2"id = "time-input-hour">
+      <input maxlength ="2" id = "time-input-minute">
+      <input id = "task-input"> -->
+
+      <div class="task-object" id="task-object">
+        <h1>08<br>10</h1>
+        <p>Stop watching YouTube so early in the morning.</p>
+        <div class='static' id='static'></div>
+        <div class="pink-load" id='pink-load'></div>
+      </div>
+
+ 
+
+    <script src="Subpage/subpage_render.js"></script>
+
+      <script>
+
+        let btn_ = document.getElementById("add-btn");
+        btn_.addEventListener('click', () => {
+            ipcRenderer.send('add-task', 'page-three');
+        }, false);
+      </script>
+
+      <script src="Subpage/add.js"></script>
+
+  </body>
+</html>
