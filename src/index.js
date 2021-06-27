@@ -54,8 +54,20 @@ app.on('activate', () => {
 // code. You can also put them in separate files and import them here.
 
 ipcMain.on('subpage-task', (event, filename) => {
-  let win = new BrowserWindow({width:800, height:600,show:false});
-  win.maximize();
+  let win = new BrowserWindow({
+    width:880, 
+    height:770,
+    webPreferences: {
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      contextIsolation: false,
+    },
+  frame:false,
+  resizable: false
+
+});
   win.loadURL(__dirname + "/Subpage/" + "index.html");
 })
+
+
 
