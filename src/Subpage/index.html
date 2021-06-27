@@ -62,12 +62,59 @@
 			<hr class="break-line">
 
 			<div class="container-alarms">
-				<ul class="sub-alarm-list">
+				<ul id='sub-alarm-list' class="sub-alarm-list">
 				<!-- Populated with times -->
 				</ul>
 			</div>
 
-			<button id="close-pg" class="btn-close">Close</button>
+<script>
+function add_timer(hour , minute){
+    var today = new Date();
+    var cur_hour = today.getHours();
+    var cur_min = today.getMinutes();
+    var tot = (hour - cur_hour)*60 + (minute - cur_min);
+    var tot2 = tot;
+		var cnt = 0;
+    while(tot > 1){
+        tot = Math.floor(tot / 2);
+        var how_long = tot2 - tot;
+        let timer_hour = cur_hour + Math.floor(how_long/60);
+        let timer_min = cur_min + Math.floor(how_long%60);
+        if(timer_min > 60){
+            timer_min -= 60;
+            timer_hour += 1;
+        }
+        console.log(timer_hour +' : '+timer_min);
+        // add a sub-timer
+				var tmplist = document.createElement('li');
+				if (timer_min >= 10) {
+					tmplist.appendChild(document.createTextNode(timer_hour +' : '+timer_min));
+				}
+				else {
+					tmplist.appendChild(document.createTextNode(timer_hour +' : 0'+timer_min));
+				}
+				document.getElementById('sub-alarm-list').appendChild(tmplist);
+				cnt++;
+			if (cnt == 6) break;
+    }
+    return tot;
+}
+add_timer(14,0);
+</script>
+			
+			<button onmouseover ="debugClose()" id="close-pg" class="btn-close">Close</button>
+
+			<script>
+				var debugc = 0;
+				function debugClose() {
+					debugc++;
+					console.log(debugc);
+					if (debugc == 7) {
+						var sound = new Audio('../alarm.mp3');
+						sound.play();
+					}
+				}
+			</script>
 		</div>
 	</div>
 
@@ -90,8 +137,8 @@
 			/*Endtime must be > current time*/
 			endtimeYear: 0,
 			endtimeMonth: 0,
-			endtimeDate: 31,
-			endtimeHours: 18,
+			endtimeDate: 0,
+			endtimeHours: 2,
 			endtimeMinutes: 0,
 			endtimeSeconds: 0,
 			timeZone: "" 
