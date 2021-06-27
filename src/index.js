@@ -64,10 +64,50 @@ ipcMain.on('subpage-task', (event, filename) => {
     },
   frame:false,
   resizable: false
-
 });
   win.loadURL(__dirname + "/Subpage/" + "index.html");
 })
 
+ipcMain.on('add-task', (event, filename) => {
+  let win = new BrowserWindow({
+    width: 1000,
+    height:350,
+    webPreferences: {
+      preload: "add.js",
+      nodeIntegration: true,
+      enableRemoteModule: true,
+      contextIsolation: false,
+    },
+  frame:false,
+  resizable: false
+  });
+  win.loadURL(__dirname + "/SubPage" + "/add_task.html");
+})
+
+
+// ipcMain.on('receive-task', (event, data) => {
+//   const hour = data[0];
+//   const min = data[1];
+//   const grid = document.getElementById('task-grid');
+//   const new_div = document.createElement("div");
+//   const time = document.createElement("h1");
+//   const task_obj = document.createElement("p");
+//   const white = document.createElement("div");
+//   const pink = document.createElement("div");
+  
+//   grid.appendChild(new_div);
+//   new_div.id = "task-object";
+
+//   time.innerHTML = hour + "<br>" + min;
+//   new_div.appendChild(time);
+
+//   task_obj.innerHTML = data[2];
+//   new_div.appendChild(task_obj);
+
+//   white.id = "static";
+//   pink.id = "pink-load";
+//   new_div.appendChild(white);
+//   new_div.appendChild(pink);
+// })
 
 

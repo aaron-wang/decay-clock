@@ -5,8 +5,8 @@
 
     <!-- font------------------------------------------------------------- -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800&family=Roboto&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600;700;800&family=Roboto&display=swap" rel="stylesheet">
 
     <title>Hello World!</title>
     <link rel="stylesheet" href="index.css">
@@ -17,13 +17,11 @@
 
     <button class="add-btn" id="add-btn">Add Task</button>
     <div class="task-grid" id="task-grid">
+<!--       
       <input maxlength ="2"id = "time-input-hour">
-      <!-- These two input boxes - times - should be beside each other
-      [23] [15]  
-      [Task description]
-      -->
-      <input maxlength ="2"id = "time-input-minute">
-      <input id = "task-input">
+      <input maxlength ="2" id = "time-input-minute">
+      <input id = "task-input"> -->
+
       <div class="task-object" id="task-object">
         <h1>08<br>10</h1>
         <p>Stop watching YouTube so early in the morning.</p>
@@ -31,58 +29,19 @@
         <div class="pink-load" id='pink-load'></div>
       </div>
 
-    <button id="subpage">Click here</button>
+ 
 
     <script src="Subpage/subpage_render.js"></script>
 
       <script>
-        const btn = document.getElementById("add-btn");
 
-        btn.addEventListener('click', AddTask)
-
-        // function AddTask(end_hour, end_minute, task) {
-        function AddTask() {
-          //take directly from input fields
-          var end_hour = document.getElementById("time-input-hour").value;
-          var end_minute = document.getElementById("time-input-minute").value;
-          var task = document.getElementById("task-input").value;
-
-          const hour = end_hour;
-          const min = end_minute;
-          const grid = document.getElementById('task-grid');
-          const new_div = document.createElement("div");
-          const time = document.createElement("h1");
-          const task_obj = document.createElement("p");
-          const white = document.createElement("div");
-          const pink = document.createElement("div");
-          
-          grid.appendChild(new_div);
-          new_div.id = "task-object";
-
-          time.innerHTML = hour + "<br>" + min;
-          new_div.appendChild(time);
-
-          task_obj.innerHTML = task;
-          new_div.appendChild(task_obj);
-
-          white.id = "static";
-          pink.id = "pink-load";
-          new_div.appendChild(white);
-          new_div.appendChild(pink);
-          
-
-          // USE THIS IF YOU WANT TO CLEAR INPUTS AFTER CLICKING "ADD TASK"
-          document.getElementById("time-input-hour").value = "";
-          document.getElementById("time-input-minute").value = "";
-          document.getElementById("task-input").value = "";
-          
-          console.log('works');
-
-
-        }
+        let btn_ = document.getElementById("add-btn");
+        btn_.addEventListener('click', () => {
+            ipcRenderer.send('add-task', 'page-three');
+        }, false);
       </script>
 
-
+      <script src="Subpage/add.js"></script>
 
   </body>
 </html>
