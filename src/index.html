@@ -17,16 +17,21 @@
 
     <button class="add-btn" id="add-btn">Add Task</button>
     <div class="task-grid" id="task-grid">
+      <input maxlength ="2"id = "time-input-hour">
+      <!-- These two input boxes - times - should be beside each other
+      [23] [15]  
+      [Task description]
+      -->
+      <input maxlength ="2"id = "time-input-minute">
+      <input id = "task-input">
       <div class="task-object" id="task-object">
         <h1>08<br>10</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+        <p>Stop watching YouTube so early in the morning.</p>
         <div class='static' id='static'></div>
         <div class="pink-load" id='pink-load'></div>
       </div>
 
     <button id="subpage">Click here</button>
-
-
 
     <script src="Subpage/subpage_render.js"></script>
 
@@ -35,7 +40,13 @@
 
         btn.addEventListener('click', AddTask)
 
-        function AddTask(end_hour, end_minute, task) {
+        // function AddTask(end_hour, end_minute, task) {
+        function AddTask() {
+          //take directly from input fields
+          var end_hour = document.getElementById("time-input-hour").value;
+          var end_minute = document.getElementById("time-input-minute").value;
+          var task = document.getElementById("task-input").value;
+
           const hour = end_hour;
           const min = end_minute;
           const grid = document.getElementById('task-grid');
@@ -58,7 +69,16 @@
           pink.id = "pink-load";
           new_div.appendChild(white);
           new_div.appendChild(pink);
+          
+
+          // USE THIS IF YOU WANT TO CLEAR INPUTS AFTER CLICKING "ADD TASK"
+          document.getElementById("time-input-hour").value = "";
+          document.getElementById("time-input-minute").value = "";
+          document.getElementById("task-input").value = "";
+          
           console.log('works');
+
+
         }
       </script>
 
