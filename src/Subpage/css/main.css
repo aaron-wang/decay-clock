@@ -452,6 +452,8 @@ input.input100 {
 
 body  {
   background-color:#344059;
+  padding: 0;
+  margin: 0;
 }
 
 .task-name {
@@ -535,3 +537,88 @@ li {
 .btn-close:active {
   background: #b1735f ;
 }
+
+#time-input-hour, #time-input-minute {
+  font-family: Raleway;
+  font-weight: 600;
+  width: 20em;
+  padding: 15px;
+  font-size: 17px;
+  border-width: 0px;
+  border-color: #CCCCCC;
+  background-color: #45526C;
+  color: #ffffff;
+  border-radius: 3px;
+  transition: ease-in-out .2s;
+  margin-right: 1em;
+  display: inline-block;
+}
+
+#task-input {
+  font-family: Raleway;
+  font-weight: 600;
+  width: 41em;
+  padding: 15px;
+  font-size: 17px;
+  border-width: 0em;
+  background-color: #45526C;
+  color: #fff;
+  border-radius: 3px;
+  transition: ease-in-out .2s;
+}
+
+#time-input-hour:focus, #time-input-minute:focus, #task-input:focus {
+  background-color: #F8F5F1;
+  border-width: 0em;
+  color: #3866A3;
+  font-family: Raleway;
+  font-weight: 600;
+}
+
+#time-input-hour::placeholder, #time-input-minute::placeholder, #task-input::placeholder {
+  color: #7b88a0;
+  font-family: Raleway;
+  font-weight: 600;
+}
+
+#time-input-hour:focus::placeholder, #time-input-minute:focus::placeholder, #task-input:focus::placeholder {
+  color: transparent;
+}
+
+.desc-header, .time-header {
+  font-family: Raleway;
+  font-weight: 600;
+  color: #fff;
+  display: inline-block;
+  font-size: 1.1em;
+  margin-right: 2em;
+  margin-top: 1.7em;
+}
+
+#close {
+  display: inline-block;
+  margin-right: 2em;
+}
+
+#add {
+  display: inline-block;
+  margin-right: 2em;
+}
+
+.task-form{
+ 
+  width: auto;
+  padding: 50px;
+  padding-bottom: 10px;
+  bottom: -50%;
+
+}
+
+.buttons {
+  margin-left: 20em;
+  top: -10%;
+  padding: 0px;
+  bottom: -50%;
+  right: -39%;
+}
+

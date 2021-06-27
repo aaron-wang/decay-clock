@@ -64,11 +64,9 @@ ipcMain.on('subpage-task', (event, filename) => {
     },
   frame:false,
   resizable: false
-
 });
   win.loadURL(__dirname + "/Subpage/" + "index.html");
 })
-
 
 ipcMain.on('add-task', (event, filename) => {
   let win = new BrowserWindow({
@@ -111,6 +109,5 @@ ipcMain.on('add-task', (event, filename) => {
 //   new_div.appendChild(white);
 //   new_div.appendChild(pink);
 // })
-
 
 
