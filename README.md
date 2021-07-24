@@ -1,25 +1,29 @@
 ![eh2021-img1](https://user-images.githubusercontent.com/66176554/126009557-5871a366-7ca5-411e-b2ad-d59d065e929b.png)
 # Decay Clock
-Project created for EngHack 2021. A productivity app made using Electron, JavaScript, Node.js, CSS, Bootstrap, and HTML.
+A productivity desktop application made using Electron, JavaScript, Node.js, CSS, Bootstrap, and HTML.
 
-> Having a proper alarm has never felt so painful! Pick your alarm time, and multiple alarms are set up automatically leading up to that time, with frequency increasing exponentially.
+`Project created for EngHack 2021.`
 
-Alarm clocks are useful, but we are often guilty of hitting the snooze button and ignoring the alarm altogether. With an abundance of distractions in our homes, procrastination has become a severe issue among students.
+Incremental alarms are set before a designated time, with frequency increasing exponentially.
 
-Decay Clock is a desktop application that sets incremental alarms before a designated time so that users will not be able to ignore it.
+<!-- > Having a proper alarm has never felt so painful!
+>  
+> Choose your alarm time, and you will have multiple alarms created leading up to that time
+
+- *Alarm clocks are useful, but we are often guilty of hitting the snooze button and ignoring the alarm altogether.*
+
+- *With an abundance of distractions in our homes, procrastination has become a severe issue among students.*
+ -->
+
 
 ### Example
 
-Currently 8:00 AM; user sets alarm for 9:00 AM
+| Currently `8:00 AM` | Set alarm for `9:00 AM`|
+| -|- |
 
 Alarms are set up as follows:
-- 8:30
-- 8:45
-- 8:52
-- 8:55
-- 8:57
-- ... etc.
-
+| 8:30 | 8:45 | 8:52 | 8:55 | 8:57 | ... etc. |
+| ---- | ---- | ---- | ---- | ---- | ---- |
 ## Images
 
 #### *Main page*
