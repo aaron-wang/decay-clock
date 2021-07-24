@@ -1,3 +1,4 @@
 src/Subpage/vendor/** linguist-vendored
 src/Subpage/fonts/** linguist-vendored
 src/Subpage/css/** linguist-vendored
+src/Subpage/index.html linguist-vendored 
